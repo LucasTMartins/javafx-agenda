@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="edu.sysagenda.controller.AgendaController"
+      spacing="10">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nome:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="nomeTextField"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="0"
+                   promptText="Digite o nome"/>
+
+        <Label text="Telefone:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="telefoneTextField"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="1"
+                   promptText="Digite o telefone"/>
+
+        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="emailTextField"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="2"
+                   promptText="Digite o email"/>
+
+        <Label text="Endereço:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="enderecoTextField"
+                   GridPane.columnIndex="1"
+                   GridPane.rowIndex="3"
+                   promptText="Digite o endereço"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Adicionar"
+                onAction="#handleAdicionar"
+                styleClass="btn-success"/>
+        <Button text="Editar"
+                onAction="#handleEditar"
+                styleClass="btn-warning"/>
+        <Button text="Excluir"
+                onAction="#handleExcluir"
+                styleClass="btn-danger"/>
+        <Button text="Limpar"
+                onAction="#handleLimpar"
+                styleClass="btn-secondary"/>
+    </HBox>
+
+    <TableView fx:id="contatosTableView" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" />
+            <TableColumn text="Nome" fx:id="nomeColumn" />
+            <TableColumn text="Telefone" fx:id="telefoneColumn" />
+            <TableColumn text="Email" fx:id="emailColumn" />
+            <TableColumn text="Endereço" fx:id="enderecoColumn" />
+        </columns>
+    </TableView>
+</VBox>
